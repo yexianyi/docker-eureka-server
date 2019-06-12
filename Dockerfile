@@ -3,9 +3,8 @@ FROM yexianyi/oracle-jdk:centos7
 
 ARG GIT_PROJECT_URL=https://github.com/yexianyi/Chukonu.git
 ARG SOURCE_PATH=/home/Chukonu
-ARG SOURCE_PATH_1=$SOURCE_PATH/chukonu_consul_api
-ARG SOURCE_PATH_2=$SOURCE_PATH/chukonu_springboot_websocket
-ARG TARGET_JAR_NAME=springboot-websocket.jar
+ARG SOURCE_PATH_1=$SOURCE_PATH/chukonu_springcloud_eureka_server
+ARG TARGET_JAR_NAME=chukonu-springcloud-eureka-server.jar
 
 ARG JDK_INSTALL_PATH=/usr/lib/java
 ENV RUNNABLE_JAR_FILE=$TARGET_JAR_NAME
@@ -22,8 +21,6 @@ RUN yum update -y \
 	&& cd /home \
 	&& git clone https://github.com/yexianyi/Chukonu.git \
 	&& cd $SOURCE_PATH_1 \
-	&& mvn clean install -DskipTests \
-	&& cd $SOURCE_PATH_2 \
 	&& mvn clean install -DskipTests \
 	&& cp target/$TARGET_JAR_NAME /home/$TARGET_JAR_NAME \
 	&& cd /home \
