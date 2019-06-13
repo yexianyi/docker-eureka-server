@@ -3,7 +3,7 @@ FROM yexianyi/oracle-jdk:centos7
 
 ARG GIT_PROJECT_URL=https://github.com/yexianyi/Chukonu.git
 ARG SOURCE_PATH=/home/Chukonu
-ARG SOURCE_PATH_1=$SOURCE_PATH/chukonu_springcloud_eureka_server
+ARG SOURCE_PATH_1=$SOURCE_PATH/chukonu-springcloud-eureka-server
 ARG TARGET_JAR_NAME=chukonu-springcloud-eureka-server.jar
 
 ARG JDK_INSTALL_PATH=/usr/lib/java
