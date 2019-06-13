@@ -33,5 +33,4 @@ RUN yum update -y \
 	&& yum autoremove -y
 	
 	#start up commands
-	ENTRYPOINT ["java", "-jar", "/home/${RUNNABLE_JAR_FILE}"]
-	CMD ["server"]
+	ENTRYPOINT [ "sh", "-c", "java -jar /home/$RUNNABLE_JAR_FILE" ]
