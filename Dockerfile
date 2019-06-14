@@ -21,7 +21,7 @@ RUN yum update -y \
 	&& cd /home \
 	&& git clone https://github.com/yexianyi/Chukonu.git \
 	&& cd $SOURCE_PATH_1 \
-	&& mvn clean install -DskipTests \
+	&& mvn clean package -DskipTests \
 	&& cp target/$TARGET_JAR_NAME /home/$TARGET_JAR_NAME \
 	&& cd /home \
 	&& rm -rf $SOURCE_PATH \
