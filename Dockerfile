@@ -14,12 +14,11 @@ ENV PATH=$JAVA_HOME/bin:$PATH
 
 
 MAINTAINER Xianyi Ye <https://cn.linkedin.com/in/yexianyi>
-
+ADD https://api.github.com/repos/yexianyi/docker-springcloud-eureka-server/git/refs/heads/master version.json
 RUN yum update -y \
 	&& yum install -y maven \ 
 	&& yum install -y git \ 
 	&& cd /home \
-	&& ADD https://api.github.com/repos/yexianyi/docker-springcloud-eureka-server/git/refs/heads/master version.json \
 	&& git clone https://github.com/yexianyi/Chukonu.git \
 	&& cd $SOURCE_PATH_1 \
 	&& mvn clean package -DskipTests \
